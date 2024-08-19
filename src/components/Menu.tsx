@@ -118,31 +118,32 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="mt-4 space-y-6">
-      {menuItems.map((item, index) => (
-        <div key={index}>
-          <h3 className="text-lg font-semibold text-gray-700">{item.title}</h3>
-          <ul className="mt-3 space-y-2">
-            {item.items.map((subItem, subIndex) => (
-              <li key={subIndex} className="group">
-                <Link
-                  href={subItem.href}
-                  className="flex items-center gap-3 p-2 transition-colors duration-300 rounded-lg hover:bg-gray-100"
-                >
-                  <Image
-                    src={subItem.icon}
-                    alt={subItem.label}
-                    width={24}
-                    height={24}
-                    className="transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <span className="text-gray-800 group-hover:text-blue-600">
-                    {subItem.label}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+    <div className="mt-6 text-sm">
+      {menuItems.map((i) => (
+        <div className="flex flex-col gap-1" key={i.title}>
+          <span className="hidden lg:block text-gray-500 font-semibold my-4 uppercase tracking-wider">
+            {i.title}
+          </span>
+          {i.items.map((item) => (
+            <Link
+              className="group flex items-center justify-center lg:justify-start gap-2 py-2 px-3.5 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-blue-50 via-white to-blue-50 hover:shadow-md transform hover:-translate-y-0.5"
+              href={item.href}
+              key={item.label}
+            >
+              <div className="flex items-center justify-center w-10 h-10 min-w-[40px] bg-white border border-gray-200 rounded-full shadow-sm transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src={item.icon}
+                  alt={item.label}
+                  width={20}
+                  height={20}
+                  className="transition-transform duration-300 group-hover:rotate-6"
+                />
+              </div>
+              <span className="hidden lg:block text-gray-700 font-medium transition-colors duration-300 group-hover:text-blue-700">
+                {item.label}
+              </span>
+            </Link>
+          ))}
         </div>
       ))}
     </div>
