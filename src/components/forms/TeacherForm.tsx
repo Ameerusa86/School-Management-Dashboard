@@ -48,7 +48,7 @@ const TeacherForm = ({
 
   return (
     <form
-      className="flex flex-col gap-8 bg-white p-6 rounded-2xl shadow-lg transition-all duration-500 hover:shadow-xl"
+      className="flex flex-col gap-8 bg-white p-6 rounded-2xl  transition-all duration-500 "
       onSubmit={onSubmit}
     >
       <h1 className="text-2xl font-bold text-gray-800 mb-4">
