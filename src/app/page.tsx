@@ -1,7 +1,11 @@
+import AdminPage from "./(dashboard)/admin/page";
+
 const Homepage = () => {
   return (
-    <div className=''>Homepage</div>
-  )
-}
+    <div className="">
+      <AdminPage />
+    </div>
+  );
+};
 
-export default Homepage
+export default Homepage;
